@@ -1,24 +1,30 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
-import {connect} from 'react-redux';
-import {bindActionCreators} from "redux";
+import React from "react";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import ProductList from './components/products/ProductList';
-import PRODUCTS from './data/DATA';
-import {addToCartAction, removeFromCartAction, updateCartAction } from './redux/actions/cart_actions';
-import './App.scss';
+import ProductList from "./components/products/ProductList";
+import PRODUCTS from "./data/DATA";
+import {
+  addToCartAction,
+  removeFromCartAction,
+  updateCartAction
+} from "./redux/actions/cart_actions";
+import "./App.scss";
 
-const Products = (addToCartAction) => <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
-const Cart = (cart) => {
-  console.log(cart)
-}
+const Products = addToCartAction => (
+  <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
+);
+const Cart = cart => {
+  console.log(cart);
+};
 
 const Links = () => (
   <nav>
-    <NavLink to='/'>Products</NavLink>
-    <NavLink to={{pathname: '/Cart'}}>Cart</NavLink>
+    <NavLink to="/">Products</NavLink>
+    <NavLink to={{ pathname: "/Cart" }}>Cart</NavLink>
   </nav>
-)
+);
 
 const App = () => (
   <Router>
@@ -30,16 +36,21 @@ const App = () => (
   </Router>
 );
 
-const mapStateToProps = ({cart}) => {
+const mapStateToProps = ({ cart }) => {
   return {
     cart
-  }
-}
+  };
+};
 
-const mapActionsToProps = (dispatch) => {
-  return bindActionCreators({
-    addToCartAction, removeFromCartAction, updateCartAction
-  }, dispatch)
-}
+const mapActionsToProps = dispatch => {
+  return bindActionCreators(
+    {
+      addToCartAction,
+      removeFromCartAction,
+      updateCartAction
+    },
+    dispatch
+  );
+};
 
-export default connect(mapStateToProps, mapActionsToProps)(App)
+export default connect(mapStateToProps, mapActionsToProps)(App);
