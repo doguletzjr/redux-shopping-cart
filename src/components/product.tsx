@@ -2,6 +2,8 @@ import React from "react";
 import ProductType from "../Interfaces/productType";
 
 const Product = (product: ProductType, addFunc: any) => {
+  console.log(addFunc)
+  console.log(product)
   return (
     <article className="article">
       <div>

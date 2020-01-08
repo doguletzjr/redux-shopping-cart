@@ -1,4 +1,3 @@
-import productType from "../../Interfaces/productType";
 import { CartActionTypes } from "../../Interfaces/cartActionTypes";
 
 const INITIAL_STATE= [
@@ -28,11 +27,11 @@ export default function cartReducer(state = INITIAL_STATE, action: CartActionTyp
         case 'REMOVE_FROM_CART': {
             // return oldState.splice(existingProductIndex, 1)
         };
+        break;
         case 'UPDATE_CART': {
             return [...oldState, action.payload]
         };
         default: {
-            console.log(state);
             return state
         }
     }
