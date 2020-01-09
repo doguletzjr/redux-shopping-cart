@@ -13,24 +13,26 @@ const INITIAL_STATE= [
 ];
 
 export default function cartReducer(state = INITIAL_STATE, action: CartActionTypes) {
-    const oldState = [...state];
-    const existingProductIndex = oldState.findIndex((products: productType) => products.id === action?.payload?.id)
+    const newState = [...state];
+    const existingProductIndex = newState.findIndex((products: productType) => products.id === action?.payload?.id)
     switch(action.type) {
         case 'ADD_TO_CART': {
             if (existingProductIndex !== -1) {
-                oldState[existingProductIndex].units++
-                return [...oldState]
+                newState[existingProductIndex].units++
+                return [...newState]
             } else {
                 action.payload.units = 1
-                return [...oldState, action.payload]
+                return [...newState, action.payload]
             }
         };
         case 'REMOVE_FROM_CART': {
-            // return oldState.splice(existingProductIndex, 1)
+            newState.splice(existingProductIndex, 1)
+            return newState
         };
         break;
         case 'UPDATE_CART': {
-            return [...oldState, action.payload]
+            
+            return [...newState, action.payload]
         };
         default: {
             return state

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import ProductList from "./components/products/ProductList";
+import Cart from "./components/cart/CartList"
 import PRODUCTS from "./data/DATA";
 import {
   addToCartAction,
@@ -11,10 +12,6 @@ import {
   updateCartAction
 } from "./redux/actions/cart_actions";
 import "./App.scss";
-
-const Cart = props => {
-  console.log(props);
-};
 
 const Links = () => (
   <nav>
@@ -49,9 +46,7 @@ class App extends React.Component {
             <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
           )} />
           <Route exact path="/Cart" render={() => (
-            <div>
-              {cart.map(e => e.name + e.units)};
-            </div>
+            <Cart cartItems={cart} removeFromCartAction={removeFromCartAction} />
           )} />
         </div>
       </Router>
