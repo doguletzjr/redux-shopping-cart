@@ -1,5 +1,5 @@
 import React from "react";
-import CartItem from "../cart-item";
+import CartItem from "./cart-item";
 import "./CartList.scss";
 import ProductType from "../../Interfaces/productType";
 

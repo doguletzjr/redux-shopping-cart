@@ -9,9 +9,6 @@ export default function cartReducer(
 ) {
   switch (action.type) {
     case "ADD_TO_CART": {
-      //   state.map((product: productType) => {
-      //     console.log(product.id === action.payload.id);
-      //   });
       const existingProductIndex = state.findIndex(
         (products: productType) => products.id === action?.payload?.id
       );

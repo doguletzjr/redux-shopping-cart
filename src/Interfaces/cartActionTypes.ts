@@ -1,17 +1,23 @@
 import productType from "./productType";
 
+export enum ReduxActionTypes {
+  ADD_TO_CART = "ADD_TO_CART",
+  REMOVE_FROM_CART = "REMOVE_FROM_CART",
+  UPDATE_CART = "UPDATE_CART",
+}
+
 interface AddToCartAction {
-  type: "ADD_TO_CART";
+  type: ReduxActionTypes;
   payload: productType;
 }
 
 interface RemoveFromCartAction {
-  type: "REMOVE_FROM_CART";
+  type: ReduxActionTypes;
   payload: productType;
 }
 
 interface UpdateCartAction {
-  type: "UPDATE_CART";
+  type: ReduxActionTypes;
   payload: productType;
 }
 

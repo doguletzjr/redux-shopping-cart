@@ -1,7 +1,6 @@
 import React from "react";
-import ProductType from "../Interfaces/productType";
 
-const Product = ({addFunc, ...products} : {addFunc: Function, products: number}) => {
+const Product = ({addFunc, ...products} : {addFunc: Function}) => {
   const product: any = products;
 
   return (

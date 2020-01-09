@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../product";
+import Product from "./product";
 import "./Products.scss";
 import ProductType from "../../Interfaces/productType";
 
