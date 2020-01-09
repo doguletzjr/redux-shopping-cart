@@ -1,7 +1,7 @@
 import React from "react";
 
 const CartItem = ({removeFunc, ...cartItems} : {removeFunc: Function}) => {
-  const cart: any = cartItems; 
+  const cart: any = cartItems;
   return (
     <article className="cart">
       <div>

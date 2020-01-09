@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import ProductList from "./components/products/ProductList";
-import Cart from "./components/cart/CartList";
-import PRODUCTS from "./data/DATA";
+import ProductList from "../components/products/ProductList";
+import Cart from "../components/cart/CartList";
+import PRODUCTS from "../data/DATA";
 import {
   addToCartAction,
   removeFromCartAction,
   updateCartAction
-} from "./redux/actions/cart_actions";
+} from "../redux/actions/cart_actions";
 import "./App.scss";
 
 const Links = () => (
