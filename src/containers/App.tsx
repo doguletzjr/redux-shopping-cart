@@ -20,7 +20,7 @@ const Links = () => (
   </nav>
 );
 
-const App = props => {
+const App = (props: any) => {
   const {
     cart,
     addToCartAction,
@@ -57,13 +57,13 @@ const App = props => {
   );
 };
 
-const mapStateToProps = ({ cart }) => {
+const mapStateToProps = ({ cart }: any) => {
   return {
     cart
   };
 };
 
-const mapActionsToProps = dispatch => {
+const mapActionsToProps = (dispatch: any) => {
   return bindActionCreators(
     {
       addToCartAction,

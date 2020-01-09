@@ -3,7 +3,7 @@ import Product from "./product";
 import "./Products.scss";
 import ProductType from "../../Interfaces/productType";
 
-export default class Products extends React.Component<Array<ProductType>> {
+export default class Products extends React.Component<{products: Array<ProductType>; addToCartAction: any}> {
 
   render() {
     const props: any = this.props;
