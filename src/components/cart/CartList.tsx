@@ -4,10 +4,6 @@ import "./CartList.scss";
 import ProductType from "../../Interfaces/productType";
 
 export default class Cart extends React.Component<Array<ProductType>> {
-  removeFromCart = (product: ProductType) => {
-    const props: any = this.props;
-    props.removeFromCartAction(product);
-  };
 
   render() {
     const props: any = this.props;

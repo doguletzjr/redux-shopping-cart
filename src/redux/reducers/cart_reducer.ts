@@ -16,9 +16,7 @@ export default function cartReducer(
         (products: productType) => products.id === action?.payload?.id
       );
 
-      return state.length == 0
-        ? [{ ...action.payload, units: 1 }]
-        : existingProductIndex == -1
+      return existingProductIndex === -1
         ? [...state, { ...action.payload, units: 1 }]
         : state.map((product: productType) =>
             product.id === action.payload.id
