@@ -7,14 +7,11 @@ export default class Products extends React.Component<Array<ProductType>> {
 
   addToCart = (product: ProductType) => {
     const props:any  = this.props
-    props.addFunc(product);
+    props.addToCartAction(product);
   };
 
   render() {
     const props: any = this.props;
-
-    console.log(props);
-    console.log(this.addToCart);
 
     return (
       <div className="container">

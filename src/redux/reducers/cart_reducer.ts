@@ -1,4 +1,5 @@
 import { CartActionTypes } from "../../Interfaces/cartActionTypes";
+import productType from "../../Interfaces/productType";
 
 const INITIAL_STATE= [
     {
@@ -13,16 +14,16 @@ const INITIAL_STATE= [
 
 export default function cartReducer(state = INITIAL_STATE, action: CartActionTypes) {
     const oldState = [...state];
-    // const existingProductIndex = state.findIndex((products: productType) => products.id === action.payload.id)
+    const existingProductIndex = oldState.findIndex((products: productType) => products.id === action?.payload?.id)
     switch(action.type) {
         case 'ADD_TO_CART': {
-            const product = action.payload;
-            product.units = 1
-            // if (existingProductIndex) {
-            //     return [...state, action.payload]
-            // } else {
+            if (existingProductIndex !== -1) {
+                oldState[existingProductIndex].units++
+                return [...oldState]
+            } else {
+                action.payload.units = 1
                 return [...oldState, action.payload]
-            // }
+            }
         };
         case 'REMOVE_FROM_CART': {
             // return oldState.splice(existingProductIndex, 1)

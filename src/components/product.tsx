@@ -1,16 +1,14 @@
 import React from "react";
 import ProductType from "../Interfaces/productType";
 
-const Product = (product: ProductType, addFunc: any) => {
-  console.log(addFunc)
-  console.log(product)
+const Product = ({addFunc, ...products} : {addFunc: any}) => {
+  const product: any = products; 
   return (
     <article className="article">
       <div>
         <img
           className="article__image"
           src={product.img}
-          title="name"
           alt={product.name}
         />
         <h1 className="article__title">{product.name}</h1>

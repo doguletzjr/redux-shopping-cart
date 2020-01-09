@@ -12,9 +12,6 @@ import {
 } from "./redux/actions/cart_actions";
 import "./App.scss";
 
-const Products = addToCartAction => (
-  <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
-);
 const Cart = props => {
   console.log(props);
 };
@@ -44,17 +41,16 @@ class App extends React.Component {
       removeFromCartAction,
       updateCartAction
     } = this.props;
-    console.log({addToCartAction})
     return (
       <Router>
         <div>
           <Links />
           <Route exact path="/" render={() => (
-            <ProductList products={PRODUCTS} addFunc={addToCartAction} />
+            <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
           )} />
           <Route exact path="/Cart" render={() => (
             <div>
-              {cart.map(e => e.name)};
+              {cart.map(e => e.name + e.units)};
             </div>
           )} />
         </div>
