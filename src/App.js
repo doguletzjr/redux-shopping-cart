@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import ProductList from "./components/products/ProductList";
-import Cart from "./components/cart/CartList"
+import Cart from "./components/cart/CartList";
 import PRODUCTS from "./data/DATA";
 import {
   addToCartAction,
@@ -20,39 +20,42 @@ const Links = () => (
   </nav>
 );
 
-// const App = () => (
-//   <Router>
-//     <div>
-//       <Links />
-//       <Route exact path="/" component={Products} />
-//       <Route exact path="/Cart" render={Cart} />
-//     </div>
-//   </Router>
-// );
-
-class App extends React.Component {
-  render() {
-    const {
-      cart,
-      addToCartAction,
-      removeFromCartAction,
-      updateCartAction
-    } = this.props;
-    return (
-      <Router>
-        <div>
-          <Links />
-          <Route exact path="/" render={() => (
-            <ProductList products={PRODUCTS} addToCartAction={addToCartAction} />
-          )} />
-          <Route exact path="/Cart" render={() => (
-            <Cart cartItems={cart} removeFromCartAction={removeFromCartAction} />
-          )} />
-        </div>
-      </Router>
-    );
-  }
-}
+const App = props => {
+  const {
+    cart,
+    addToCartAction,
+    removeFromCartAction,
+    updateCartAction
+  } = props;
+  return (
+    <Router>
+      <Links />
+      <Route
+        exact
+        path="/"
+        render={() => (
+          <React.Fragment>
+            <ProductList
+              products={PRODUCTS}
+              addToCartAction={addToCartAction}
+            />
+            <Cart
+              cartItems={cart}
+              removeFromCartAction={removeFromCartAction}
+            />
+          </React.Fragment>
+        )}
+      />
+      <Route
+        exact
+        path="/Cart"
+        render={() => (
+          <Cart cartItems={cart} removeFromCartAction={removeFromCartAction} />
+        )}
+      />
+    </Router>
+  );
+};
 
 const mapStateToProps = ({ cart }) => {
   return {

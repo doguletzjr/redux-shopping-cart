@@ -18,7 +18,7 @@ export default class Cart extends React.Component<Array<ProductType>> {
           <CartItem
             key={cartItem.id}
             {...cartItem}
-            removeFunc={this.removeFromCart}
+            removeFunc={props.removeFromCartAction}
           />
         ))}
         {props.cartItems.length > 0 && (

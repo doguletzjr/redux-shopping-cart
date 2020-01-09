@@ -4,5 +4,5 @@ export default interface productType {
   description: string;
   price: number;
   img: string;
-  units?: number;
+  units: number;
 }

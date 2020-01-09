@@ -1,8 +1,9 @@
 import React from "react";
 import ProductType from "../Interfaces/productType";
 
-const Product = ({addFunc, ...products} : {addFunc: any}) => {
-  const product: any = products; 
+const Product = ({addFunc, ...products} : {addFunc: Function, products: number}) => {
+  const product: any = products;
+
   return (
     <article className="article">
       <div>

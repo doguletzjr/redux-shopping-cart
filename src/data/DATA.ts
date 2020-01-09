@@ -6,7 +6,8 @@ const PRODUCTS: Array<productType> = [
     name: "Apple",
     description: "Red apples",
     img: "https://placeimg.com/150/150/fruits",
-    price: 100
+    price: 100,
+    units: 0
   },
 
   {
@@ -14,7 +15,8 @@ const PRODUCTS: Array<productType> = [
     name: "A Cat",
     description: "CCO (Chief Cat Officer)",
     img: "https://placeimg.com/150/150/animals",
-    price: 100
+    price: 100,
+    units: 0
   },
 
   {
@@ -22,7 +24,8 @@ const PRODUCTS: Array<productType> = [
     name: "Milk",
     description: "Milk for the lactose tollerent",
     img: "https://placeimg.com/150/150/nature",
-    price: 100
+    price: 100,
+    units: 0
   },
 
   {
@@ -30,7 +33,8 @@ const PRODUCTS: Array<productType> = [
     name: "Banana",
     description: "I need those carbs",
     img: "https://placeimg.com/150/150/people",
-    price: 100
+    price: 100,
+    units: 0
   },
 
   {
@@ -38,7 +42,8 @@ const PRODUCTS: Array<productType> = [
     name: "Orange",
     description: "Orange are orange",
     img: "https://placeimg.com/150/150/arch",
-    price: 100
+    price: 100,
+    units: 0
   }
 ];
 
