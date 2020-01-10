@@ -6,7 +6,7 @@ const PRODUCTS: Array<productType> = [
     name: "Apple",
     description: "Red apples",
     img: "https://placeimg.com/150/150/fruits",
-    price: 100,
+    price: 50,
     units: 0
   },
 
@@ -15,7 +15,7 @@ const PRODUCTS: Array<productType> = [
     name: "A Cat",
     description: "CCO (Chief Cat Officer)",
     img: "https://placeimg.com/150/150/animals",
-    price: 100,
+    price: 250,
     units: 0
   },
 
@@ -33,7 +33,7 @@ const PRODUCTS: Array<productType> = [
     name: "Banana",
     description: "I need those carbs",
     img: "https://placeimg.com/150/150/people",
-    price: 100,
+    price: 70,
     units: 0
   },
 
@@ -42,7 +42,7 @@ const PRODUCTS: Array<productType> = [
     name: "Orange",
     description: "Orange are orange",
     img: "https://placeimg.com/150/150/arch",
-    price: 100,
+    price: 60,
     units: 0
   }
 ];

@@ -1,1 +1,15 @@
+.cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
 
+table {
+    width: 100%;
+    table-layout: fixed;
+    td {
+        text-align: center;
+    }
+}

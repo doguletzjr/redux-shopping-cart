@@ -9,11 +9,11 @@ export default function cartReducer(
 ) {
   switch (action.type) {
     case "ADD_TO_CART": {
-      const existingProductIndex = state.findIndex(
+      const existingProductIndex = state.find(
         (products: productType) => products.id === action?.payload?.id
       );
 
-      return existingProductIndex === -1
+      return !existingProductIndex
         ? [...state, { ...action.payload, units: 1 }]
         : state.map((product: productType) =>
             product.id === action.payload.id
@@ -21,15 +21,14 @@ export default function cartReducer(
               : product
           );
     }
-    case "REMOVE_FROM_CART":
-      {
-        return state.filter(
-          (products: productType) => products.id !== action.payload.id
-        );
-      }
-      break;
     case "UPDATE_CART": {
-      return [...state, action.payload];
+      return action.payload.units
+        ? state.map((product: productType) =>
+            product.id === action.payload.id ? action.payload : product
+          )
+        : state.filter(
+            (products: productType) => products.id !== action.payload.id
+          );
     }
     default: {
       return state;

@@ -8,7 +8,6 @@ import Cart from "../components/cart/CartList";
 import PRODUCTS from "../data/DATA";
 import {
   addToCartAction,
-  removeFromCartAction,
   updateCartAction
 } from "../redux/actions/cart_actions";
 import "./App.scss";
@@ -24,7 +23,6 @@ const App = (props: any) => {
   const {
     cart,
     addToCartAction,
-    removeFromCartAction,
     updateCartAction
   } = props;
   return (
@@ -41,7 +39,7 @@ const App = (props: any) => {
             />
             <Cart
               cartItems={cart}
-              removeFromCartAction={removeFromCartAction}
+              updateCartAction={updateCartAction}
             />
           </React.Fragment>
         )}
@@ -50,7 +48,10 @@ const App = (props: any) => {
         exact
         path="/Cart"
         render={() => (
-          <Cart cartItems={cart} removeFromCartAction={removeFromCartAction} />
+          <Cart
+            cartItems={cart}
+            updateCartAction={updateCartAction}
+          />
         )}
       />
     </Router>
@@ -67,7 +68,6 @@ const mapActionsToProps = (dispatch: any) => {
   return bindActionCreators(
     {
       addToCartAction,
-      removeFromCartAction,
       updateCartAction
     },
     dispatch

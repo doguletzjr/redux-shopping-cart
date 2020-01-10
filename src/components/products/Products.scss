@@ -1,7 +1,13 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 1020px;
+  max-width: 90vw;
+  margin: 0 auto;
+  &--column {
+    flex-direction: column;
+  }
 }
 
 .article {
