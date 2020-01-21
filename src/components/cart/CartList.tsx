@@ -31,12 +31,12 @@ export default class Cart extends React.Component<{
               </tbody>
             </table>
             <div>
-              Total: ${" "}
+              Total: $
               {this.props.cartItems.reduce(
                 (acc: number, cartItem: any) =>
                   Math.round((acc += cartItem.price * cartItem.units * 1.19)),
                 0
-              )}
+              )} (incl tax)
             </div>
         </div>
       );
